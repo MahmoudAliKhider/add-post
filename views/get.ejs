@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="css/style.css" rel="stylesheet">
+  
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light ">
+        <a class="navbar-brand" href="/">NodePOST</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav" >
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="/post" style="color: white;">addPosts <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/post/get" style="color: white;">POST</a>
+            </li>
+           
+          </ul>
+        </div>
+      </nav>
+    
+
+<div class="card text-center" style="width: 80%; margin-top:30px; margin-left: auto; margin-right: auto;margin-bottom: 30px;">
+    <div class="card-header">
+     <%data.forEach(postData =>{%>
+        <%= postData.name %>
+   
+    </div>
+    <div class="card-body">
+      <h5 class="card-title"><%= postData.title  %> </h5>
+      <p class="card-text"><%= postData.sub %></p>
+      
+    </div>
+    <div class="card-footer text-muted" >
+      <%= postData.Date %>
+      <br>
+      <br>
+      <br>
+      <%})%>
+    </div>
+  </div>
+  <style>
+ nav,button{
+ background-color: rgb(113, 113, 248);
+ 
+ color: rgb(240, 233, 233);
+ font-size: 20px;
+ transition: all 1000ms ease 0ms;
+}
+.nav-item:hover{
+ font-size: 26px;
+}
+
+</style>
+<%- include('layout/footer.ejs') %> 
